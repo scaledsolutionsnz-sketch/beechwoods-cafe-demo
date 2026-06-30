@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Leave a Review | Beechwoods Cafe, Murchison</title>
+<meta name="description" content="Share your experience at Beechwoods Cafe in Murchison." />
+<meta name="theme-color" content="#241c16" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23241c16'/%3E%3Ctext x='50' y='68' font-size='54' font-family='Georgia,serif' fill='%23b5743a' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+body{background:var(--espresso);color:var(--bone)}
+.review-wrap{min-height:100svh;display:grid;place-items:center;padding:120px 24px 70px;text-align:center;position:relative;overflow:hidden}
+.review-wrap::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1600&q=60') center/cover;opacity:.14}
+.review-card-main{position:relative;max-width:560px;width:100%;background:rgba(50,40,32,.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:54px 40px;box-shadow:var(--shadow)}
+.review-card-main .eyebrow{color:#e7c79f}
+.review-card-main h1{color:#fff;font-size:clamp(1.9rem,5vw,2.7rem);margin-bottom:14px}
+.review-card-main p.sub{color:rgba(244,239,231,.82);margin-bottom:36px;font-size:1.05rem}
+.starpick{display:flex;justify-content:center;gap:10px;margin-bottom:14px}
+.starpick button{background:none;border:none;cursor:pointer;font-size:2.8rem;line-height:1;color:rgba(255,255,255,.28);transition:transform .2s ease,color .2s ease;padding:4px}
+.starpick button:hover{transform:scale(1.18)}
+.starpick button.lit{color:var(--accent)}
+.hint{color:rgba(244,239,231,.6);font-size:.9rem;min-height:24px;margin-bottom:20px}
+.backlink{display:inline-block;margin-top:30px;color:rgba(244,239,231,.7);font-weight:600;font-size:.9rem;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:2px}
+.backlink:hover{color:var(--accent)}
+.brand-top{position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:5}
+.brand-top .brand{color:#fff;justify-content:center}
+</style>
+</head>
+<body>
+<div class="brand-top">
+  <a class="brand" href="index.html"><span class="mark">B</span><span><b>Beechwoods Cafe</b><span>Murchison</span></span></a>
+</div>
+
+<div class="review-wrap">
+  <div class="review-card-main">
+    <span class="eyebrow">Your feedback</span>
+    <h1>How was your visit?</h1>
+    <p class="sub">Tap a star to let us know how we did at Beechwoods Cafe.</p>
+    <div class="starpick" id="stars">
+      <button data-v="1" aria-label="1 star">★</button>
+      <button data-v="2" aria-label="2 stars">★</button>
+      <button data-v="3" aria-label="3 stars">★</button>
+      <button data-v="4" aria-label="4 stars">★</button>
+      <button data-v="5" aria-label="5 stars">★</button>
+    </div>
+    <div class="hint" id="hint">&nbsp;</div>
+    <a class="backlink" href="index.html">← Back to the website</a>
+  </div>
+</div>
+
+<script>
+  // 4-5 stars -> Google review; 1-3 -> private feedback form
+  var GOOGLE_REVIEW_URL = "https://g.page/r/PLACEHOLDER/review";
+  var stars = document.querySelectorAll('#stars button');
+  var hint = document.getElementById('hint');
+  var labels = {1:"We're sorry to hear that — tell us more",2:"We'd like to put this right",3:"Thanks — how can we do better?",4:"Great! Share it on Google",5:"Awesome! Share it on Google"};
+  stars.forEach(function(btn){
+    btn.addEventListener('mouseenter',function(){paint(+btn.dataset.v)});
+    btn.addEventListener('mouseleave',function(){paint(0)});
+    btn.addEventListener('click',function(){
+      var v=+btn.dataset.v;
+      if(v>=4){ window.location.href=GOOGLE_REVIEW_URL; }
+      else { window.location.href="private.html?rating="+v; }
+    });
+  });
+  function paint(v){
+    stars.forEach(function(b){ b.classList.toggle('lit', +b.dataset.v<=v); });
+    hint.textContent = v?labels[v]:" ";
+  }
+</script>
+</body>
+</html>

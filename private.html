@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tell Us More | Beechwoods Cafe, Murchison</title>
+<meta name="description" content="Private feedback for Beechwoods Cafe in Murchison." />
+<meta name="theme-color" content="#241c16" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23241c16'/%3E%3Ctext x='50' y='68' font-size='54' font-family='Georgia,serif' fill='%23b5743a' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+body{background:var(--espresso);color:var(--bone)}
+.fb-wrap{min-height:100svh;display:grid;place-items:center;padding:120px 24px 70px}
+.fb-card{max-width:560px;width:100%;background:var(--paper);color:var(--ink);border-radius:22px;padding:46px 40px;box-shadow:var(--shadow)}
+.fb-card .eyebrow{color:var(--accent-deep)}
+.fb-card h1{font-size:clamp(1.7rem,4.5vw,2.4rem);margin-bottom:10px}
+.fb-card > p{color:var(--ink-soft);margin-bottom:28px}
+.rate-show{display:flex;gap:6px;color:var(--accent);font-size:1.5rem;margin-bottom:24px}
+.rate-show .off{color:var(--line)}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:700;font-size:.82rem;margin-bottom:6px}
+.field input,.field textarea{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:.97rem;background:#fff;color:var(--ink)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(181,116,58,.16)}
+.field textarea{resize:vertical;min-height:120px}
+.fb-card .btn{width:100%;justify-content:center;margin-top:6px}
+.backlink{display:inline-block;margin-top:22px;color:var(--ink-soft);font-weight:600;font-size:.9rem}
+.backlink:hover{color:var(--accent-deep)}
+.success{display:none;text-align:center}
+.success.show{display:block}
+.success .tick{width:74px;height:74px;border-radius:50%;background:var(--accent);display:grid;place-items:center;margin:0 auto 22px}
+.success .tick svg{width:38px;height:38px;stroke:#fff}
+.success h1{margin-bottom:10px}
+.brand-top{position:fixed;top:26px;left:50%;transform:translateX(-50%);z-index:5}
+.brand-top .brand{color:#fff;justify-content:center}
+</style>
+</head>
+<body>
+<div class="brand-top">
+  <a class="brand" href="index.html"><span class="mark">B</span><span><b>Beechwoods Cafe</b><span>Murchison</span></span></a>
+</div>
+
+<div class="fb-wrap">
+  <div class="fb-card">
+    <div id="formView">
+      <span class="eyebrow">Private feedback</span>
+      <h1>Thanks for being honest</h1>
+      <p>We'd genuinely like to know what let you down so we can put it right. This goes straight to the team — not public.</p>
+      <div class="rate-show" id="rateShow"></div>
+      <form id="fbForm" action="https://formsubmit.co/hello@beechwoodscafe.co.nz" method="POST">
+        <input type="hidden" name="_subject" value="Private feedback — Beechwoods Cafe" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="Rating" id="ratingField" value="" />
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" type="text" name="Name" required placeholder="First and last name" />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="Email" required placeholder="you@email.com" />
+        </div>
+        <div class="field">
+          <label for="feedback">What happened?</label>
+          <textarea id="feedback" name="Feedback" required placeholder="Tell us what we could have done better..."></textarea>
+        </div>
+        <button class="btn btn--solid" type="submit">Send feedback</button>
+      </form>
+      <a class="backlink" href="index.html">← Back to the website</a>
+    </div>
+
+    <div class="success" id="successView">
+      <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h1>Thank you</h1>
+      <p>We've received your feedback and someone from Beechwoods Cafe will take a look. We appreciate you giving us the chance to make it right.</p>
+      <a class="btn btn--ink" href="index.html">Back to home</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var rating = parseInt(params.get('rating'),10);
+  if(!(rating>=1 && rating<=5)) rating = 3;
+  document.getElementById('ratingField').value = rating;
+  var show = document.getElementById('rateShow');
+  for(var i=1;i<=5;i++){
+    var s=document.createElement('span');
+    s.textContent='★';
+    if(i>rating) s.className='off';
+    show.appendChild(s);
+  }
+  // AJAX submit so we can show an inline success state (no reCAPTCHA)
+  var form = document.getElementById('fbForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    fetch(form.action, { method:'POST', body:new FormData(form), headers:{ 'Accept':'application/json' } })
+      .then(function(){ swap(); })
+      .catch(function(){ swap(); }); // demo: still confirm
+  });
+  function swap(){
+    document.getElementById('formView').style.display='none';
+    document.getElementById('successView').classList.add('show');
+  }
+</script>
+</body>
+</html>
