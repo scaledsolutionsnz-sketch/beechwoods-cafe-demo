@@ -3,219 +3,409 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Beechwoods Cafe and Beechwoods Catering &amp; Weddings | Murchison</title>
-<meta name="description" content="One Murchison kitchen, two ways to enjoy it. Beechwoods Cafe for coffee, breakfast and baking on State Highway 6, plus Beechwoods Catering and Weddings for events and wedding feasts across the top of the South." />
-<meta name="theme-color" content="#241c16" />
-<meta property="og:title" content="Beechwoods Cafe and Beechwoods Catering &amp; Weddings" />
-<meta property="og:description" content="One Murchison kitchen, two ways to enjoy it. The roadside cafe, plus catering and weddings." />
+<title>Beechwoods Café | Coffee, food and a good stop in Murchison</title>
+<meta name="description" content="Beechwoods Café in Murchison. Barista coffee, hearty food and fresh cabinet baking, with room for the whole family and every kind of vehicle. Open 7 days on State Highway 6." />
+<meta name="theme-color" content="#2a211a" />
+<meta property="og:title" content="Beechwoods Café | Murchison" />
+<meta property="og:description" content="Barista coffee, hearty food and fresh baking. The good stop on State Highway 6, open 7 days." />
 <meta property="og:type" content="website" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23241c16'/%3E%3Ctext x='50' y='68' font-size='54' font-family='Georgia,serif' fill='%23b5743a' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+<meta property="og:image" content="https://beechwoods-cafe-demo.vercel.app/img/hero-1.jpg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232a211a'/%3E%3Ctext x='50' y='70' font-size='60' font-family='Georgia,serif' fill='%23c8623b' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --espresso:#241c16; --espresso-2:#322820; --ink:#0f0c09;
-    --bone:#f4efe7;
-    --cafe:#b5743a; --cafe-d:#965c2a;
-    --cater:#7e8c5c; --cater-d:#647049;
-    --ease:cubic-bezier(.2,.7,.2,1);
+    --bg:oklch(0.968 0.013 74);
+    --bg-sink:oklch(0.945 0.016 72);
+    --surface:oklch(0.995 0.006 74);
+    --ink:oklch(0.255 0.022 58);
+    --ink-soft:oklch(0.415 0.021 56);
+    --muted:oklch(0.55 0.018 58);
+    --line:oklch(0.885 0.014 72);
+    --line-soft:oklch(0.92 0.012 72);
+    --accent:oklch(0.575 0.145 42);
+    --accent-deep:oklch(0.5 0.14 40);
+    --leaf:oklch(0.58 0.07 140);
+    --night:oklch(0.24 0.02 58);
+    --r:20px; --r-sm:13px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+    --serif:'Fraunces',Georgia,serif;
+    --edge:min(1240px,92vw);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
-  body{
-    font-family:'Manrope',system-ui,sans-serif;
-    background:var(--ink); color:var(--bone);
-    overflow:hidden; -webkit-font-smoothing:antialiased;
-  }
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.03;letter-spacing:-.01em;font-optical-sizing:auto}
+  ::selection{background:oklch(0.575 0.145 42 / .22)}
+  .edge{width:var(--edge);margin-inline:auto}
+  .eyebrow{font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.92rem 1.5rem;border-radius:100px;border:1px solid transparent;cursor:pointer;transition:transform .3s var(--ease),background .3s,color .3s,border-color .3s}
+  .btn svg{width:17px;height:17px}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-solid{background:var(--accent);color:oklch(0.99 0.01 74)}
+  .btn-solid:hover{background:var(--accent-deep)}
+  .btn-line{background:transparent;border-color:oklch(1 0 0 / .5);color:oklch(0.99 0.01 74)}
+  .btn-line:hover{background:oklch(1 0 0 / .1);border-color:oklch(1 0 0 / .8)}
+  .btn-ink{background:var(--ink);color:var(--bg)}
+  .btn-ink:hover{background:var(--night)}
+  .btn-quiet{background:var(--surface);border-color:var(--line);color:var(--ink)}
+  .btn-quiet:hover{border-color:var(--accent);color:var(--accent)}
 
-  /* Top strip */
-  .chooser-top{
-    position:fixed; top:0; left:0; right:0; z-index:5;
-    display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap;
-    padding:18px 20px; text-align:center;
-    font-family:'Manrope',sans-serif; font-weight:600;
-    letter-spacing:.18em; text-transform:uppercase; font-size:.76rem;
-    color:rgba(244,239,231,.92);
-    background:linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,0));
-    pointer-events:none; animation:chTop .7s ease both;
-  }
-  .chooser-top .dot{color:var(--cafe)}
-  .chooser-top .addr{color:rgba(244,239,231,.6);letter-spacing:.05em;text-transform:none;font-size:.78rem}
+  .nav{position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:1.15rem clamp(18px,4vw,40px);transition:background .4s var(--ease),padding .4s var(--ease),box-shadow .4s,border-color .4s;border-bottom:1px solid transparent}
+  .nav.scrolled{background:oklch(0.968 0.013 74 / .86);backdrop-filter:blur(14px);padding:.7rem clamp(18px,4vw,40px);border-color:var(--line-soft)}
+  .wordmark{display:flex;flex-direction:column;line-height:1;color:oklch(0.99 0.01 74);transition:color .4s}
+  .nav.scrolled .wordmark{color:var(--ink)}
+  .wordmark b{font-family:var(--serif);font-weight:600;font-size:1.35rem;letter-spacing:-.01em}
+  .wordmark small{font-family:var(--sans);font-weight:600;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;opacity:.72;margin-top:5px}
+  .nav-mid{display:flex;gap:2.1rem}
+  .nav-mid a{font-weight:500;font-size:.92rem;color:oklch(0.99 0.01 74 / .88);transition:color .3s}
+  .nav.scrolled .nav-mid a{color:var(--ink-soft)}
+  .nav-mid a:hover{color:var(--accent)}
+  .nav-end{display:flex;align-items:center;gap:1rem}
+  .nav-call{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.92rem;color:oklch(0.99 0.01 74)}
+  .nav.scrolled .nav-call{color:var(--ink)}
+  .nav-call svg{width:15px;height:15px;color:var(--accent)}
+  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+  .burger span{width:24px;height:2px;border-radius:2px;background:oklch(0.99 0.01 74);transition:.3s}
+  .nav.scrolled .burger span{background:var(--ink)}
 
-  /* Split */
-  .split{display:flex; height:100vh; height:100svh; width:100%}
-  .panel{
-    position:relative; flex:1 1 50%; overflow:hidden;
-    display:flex; align-items:center; justify-content:center;
-    text-decoration:none; color:var(--bone);
-    transition:flex-grow .5s var(--ease), opacity .4s var(--ease);
-    will-change:flex-grow;
-  }
-  .panel::before{
-    content:""; position:absolute; inset:0; z-index:0;
-    background-size:cover; background-position:center;
-    transition:transform .6s var(--ease), opacity .4s var(--ease);
-    animation:chOpen .9s var(--ease) both;
-  }
-  .panel::after{content:""; position:absolute; inset:0; z-index:1}
-  .panel--cafe::before{
-    background-image:linear-gradient(180deg, rgba(36,28,22,.62), rgba(24,18,14,.86)), url('img/welcome.jpg');
-    transform-origin:right center;
-  }
-  .panel--cater::before{
-    background-image:linear-gradient(180deg, rgba(30,34,24,.6), rgba(20,23,16,.9)), url('img/g-platters.jpg');
-    transform-origin:left center;
-  }
-  .panel--cafe::after{background:radial-gradient(120% 90% at 18% 24%, rgba(181,116,58,.28), transparent 55%)}
-  .panel--cater::after{background:radial-gradient(120% 90% at 82% 24%, rgba(126,140,92,.32), transparent 55%)}
-  .panel-inner{
-    position:relative; z-index:2; max-width:440px; width:100%;
-    padding:40px 44px; text-align:left;
-    animation:chFade .75s var(--ease) both;
-  }
-  .panel--cafe .panel-inner{animation-delay:.18s}
-  .panel--cater .panel-inner{animation-delay:.32s}
-  @keyframes chFade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-  @keyframes chOpen{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:none}}
-  @keyframes chTop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
-  .panel-kicker{
-    display:inline-flex; align-items:center; gap:9px;
-    font-family:'Manrope',sans-serif; font-weight:700; text-transform:uppercase;
-    letter-spacing:.24em; font-size:.72rem; margin-bottom:18px;
-  }
-  .panel-kicker::before{content:"";width:26px;height:2px}
-  .panel--cafe .panel-kicker{color:#e7c79f}
-  .panel--cafe .panel-kicker::before{background:var(--cafe)}
-  .panel--cater .panel-kicker{color:#cdd6b4}
-  .panel--cater .panel-kicker::before{background:var(--cater)}
-  .panel h1{
-    font-family:'Marcellus',serif; font-weight:400;
-    line-height:1.04; font-size:clamp(2.3rem,4vw,3.4rem); margin-bottom:16px; letter-spacing:.4px;
-  }
-  .panel p{
-    color:rgba(244,239,231,.86); font-size:1.05rem; line-height:1.6; max-width:40ch; margin-bottom:30px;
-  }
-  .panel-btn{
-    display:inline-flex; align-items:center; gap:10px;
-    font-family:'Manrope',sans-serif; font-weight:700; text-transform:uppercase;
-    letter-spacing:.06em; font-size:.9rem;
-    padding:14px 26px; border-radius:999px; color:#fff;
-    transition:transform .2s var(--ease), background .2s var(--ease);
-  }
-  .panel-btn svg{width:18px;height:18px;transition:transform .25s var(--ease)}
-  .panel--cafe .panel-btn{background:var(--cafe)}
-  .panel--cater .panel-btn{background:var(--cater);color:#1a1d12}
-  .panel:hover .panel-btn{transform:translateY(-2px)}
-  .panel--cafe:hover .panel-btn{background:var(--cafe-d)}
-  .panel--cater:hover .panel-btn{background:var(--cater-d)}
-  .panel:hover .panel-btn svg{transform:translateX(4px)}
-  .panel-phone{
-    display:block; margin-top:22px;
-    font-family:'Manrope',sans-serif; font-weight:600; letter-spacing:.06em;
-    font-size:.98rem; color:rgba(244,239,231,.6);
-  }
-  .panel-phone b{color:rgba(244,239,231,.92);font-weight:700}
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--night)}
+  .hero-media{position:absolute;inset:0;z-index:0}
+  .hero-media .frame{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.05);transition:opacity 1.7s var(--ease)}
+  .hero-media .frame.on{opacity:1;animation:drift 9s ease-out forwards}
+  @keyframes drift{from{transform:scale(1.09)}to{transform:scale(1)}}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,oklch(0.2 0.02 58 / .5) 0%,oklch(0.2 0.02 58 / .12) 38%,oklch(0.18 0.02 58 / .82) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding-block:0 clamp(48px,7vw,88px);padding-top:150px}
+  .hero-in .edge{display:grid;grid-template-columns:1.35fr .95fr;gap:2rem;align-items:end}
+  .hero .eyebrow{color:oklch(0.86 0.06 70)}
+  .hero h1{color:oklch(0.99 0.01 74);font-size:clamp(2.7rem,6.6vw,5.4rem);font-weight:500;margin:1rem 0 1.1rem;max-width:15ch;text-wrap:balance}
+  .hero p{color:oklch(0.99 0.01 74 / .9);font-size:clamp(1.05rem,1.5vw,1.2rem);max-width:52ch;margin-bottom:1.9rem}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem}
+  .rw{background:oklch(0.28 0.025 58 / .78);border:1px solid oklch(1 0 0 / .12);border-radius:var(--r);padding:1.4rem 1.5rem;transition:opacity .45s var(--ease)}
+  .rw.fade{opacity:0}
+  .rw-top{display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem}
+  .rw-g{width:26px;height:26px;border-radius:50%;background:oklch(0.99 0.01 74);display:grid;place-items:center;font-family:var(--sans);font-weight:700;font-size:.9rem;color:oklch(0.5 0.16 255)}
+  .rw-tag{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:oklch(0.99 0.01 74 / .55)}
+  .rw-quote{color:oklch(0.99 0.01 74 / .94);font-size:.96rem;line-height:1.55;font-family:var(--serif);font-weight:400}
+  .rw-name{margin-top:.7rem;font-size:.82rem;font-weight:600;color:oklch(0.99 0.01 74 / .72)}
+  .scroll-note{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:2;color:oklch(0.99 0.01 74 / .55);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase}
 
-  /* Desktop hover expand */
-  @media (hover:hover) and (min-width:861px){
-    .split:hover .panel{flex-grow:.82; opacity:.62}
-    .split:hover .panel:hover{flex-grow:1.22; opacity:1}
-    .panel:hover::before{transform:scale(1.05)}
-  }
-  @media (min-width:861px){
-    .panel--cater{box-shadow:inset 1px 0 0 rgba(255,255,255,.08)}
-  }
+  .ribbon{background:var(--ink);color:var(--bg)}
+  .ribbon .edge{display:flex;flex-wrap:wrap;gap:.4rem 2.6rem;align-items:center;justify-content:space-between;padding:1.4rem 0}
+  .ribbon .h{display:inline-flex;align-items:center;gap:.7rem;font-weight:500;font-size:.98rem;color:oklch(0.98 0.01 74 / .92)}
+  .ribbon .h svg{width:19px;height:19px;color:oklch(0.78 0.09 68);flex:none}
 
-  /* Mobile: two clean tap cards */
-  @media (max-width:860px){
-    html,body{height:auto}
-    body{overflow:auto; display:flex; flex-direction:column; min-height:100svh}
-    .chooser-top{
-      position:static; flex:0 0 auto; background:transparent; pointer-events:auto;
-      flex-direction:column; gap:6px; padding:40px 22px 8px;
-    }
-    .chooser-top .dot{display:none}
-    .chooser-top span:first-child{color:#fff; font-size:1rem; letter-spacing:.12em}
-    .chooser-top .addr{width:100%; color:rgba(244,239,231,.5)}
-    .chooser-top::after{
-      content:"Tap an option to get started"; display:block; width:100%; margin-top:12px;
-      text-transform:none; letter-spacing:.01em; font-weight:500;
-      font-size:.84rem; color:rgba(244,239,231,.42);
-    }
-    .split{
-      flex:1 1 auto; flex-direction:column; height:auto; min-height:0;
-      justify-content:center; gap:16px; width:100%; max-width:480px; margin:0 auto;
-      padding:6px 18px calc(30px + env(safe-area-inset-bottom));
-    }
-    .panel{
-      flex:0 0 auto; min-height:170px; border-radius:20px; overflow:hidden;
-      align-items:stretch; justify-content:flex-start;
-      box-shadow:0 16px 40px -24px rgba(0,0,0,.85);
-    }
-    .panel-inner{
-      position:relative; width:100%; max-width:none;
-      padding:26px 70px 26px 24px; display:flex; flex-direction:column; align-items:flex-start;
-      justify-content:center; animation-delay:0s;
-    }
-    .panel-kicker{margin-bottom:9px; font-size:.68rem}
-    .panel h1{font-size:1.72rem; line-height:1.02; margin-bottom:8px}
-    .panel p{font-size:.92rem; margin-bottom:0; max-width:32ch}
-    .panel-phone{display:none}
-    .panel-btn{
-      position:absolute; top:50%; right:18px; transform:translateY(-50%);
-      width:46px; height:46px; padding:0; border-radius:50%;
-      font-size:0; display:grid; place-items:center;
-    }
-    .panel-btn svg{width:20px; height:20px}
+  section.block{padding-block:clamp(72px,10vw,128px)}
+  .lede{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+  .lede-media{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:5/6}
+  .lede-media img{width:100%;height:100%;object-fit:cover}
+  .lede h2{font-size:clamp(2rem,3.9vw,3.1rem);margin:.9rem 0 1.2rem;text-wrap:balance}
+  .lede p{color:var(--ink-soft);font-size:1.06rem;margin-bottom:1rem;max-width:60ch}
+  .signoff{margin-top:1.6rem;font-family:var(--serif);font-size:1.15rem;color:var(--accent)}
+
+  .food{background:var(--bg-sink)}
+  .food .edge{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.4rem,3vw,2.4rem);align-items:stretch}
+  .food-head{grid-column:1/-1;max-width:56ch;margin-bottom:1.4rem}
+  .food-head h2{font-size:clamp(2rem,3.9vw,3.1rem);margin:.7rem 0 .8rem}
+  .food-head p{color:var(--ink-soft);font-size:1.06rem}
+  .plate{position:relative;border-radius:var(--r);overflow:hidden;min-height:340px}
+  .plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+  .plate:hover img{transform:scale(1.05)}
+  .plate::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,oklch(0.2 0.02 58 / .72),transparent 55%)}
+  .plate .cap{position:absolute;left:1.3rem;bottom:1.2rem;z-index:2;color:oklch(0.99 0.01 74)}
+  .plate .cap b{font-family:var(--serif);font-weight:500;font-size:1.5rem;display:block}
+  .plate .cap span{font-size:.9rem;opacity:.85}
+  .plate.tall{grid-row:span 2}
+
+  .gal-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.8rem;flex-wrap:wrap}
+  .gal-head h2{font-size:clamp(2rem,3.9vw,3rem)}
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+  .gal figure{position:relative;overflow:hidden;border-radius:var(--r-sm)}
+  .gal img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+  .gal figure:hover img{transform:scale(1.06)}
+  .gal .w2{grid-column:span 2}
+  .gal .h2{grid-row:span 2}
+
+  .voices{background:var(--night);color:var(--bg)}
+  .voices h2{color:oklch(0.99 0.01 74);font-size:clamp(2rem,3.9vw,3rem);max-width:20ch;margin:.8rem 0 0}
+  .voices .eyebrow{color:oklch(0.82 0.08 70)}
+  .quotes{margin-top:3rem;columns:3;column-gap:2.2rem}
+  .quote{break-inside:avoid;margin-bottom:2.2rem;padding-bottom:2.2rem;border-bottom:1px solid oklch(1 0 0 / .12)}
+  .quote:last-child{border-bottom:0}
+  .quote p{font-family:var(--serif);font-weight:400;font-size:1.12rem;line-height:1.5;color:oklch(0.99 0.01 74 / .92)}
+  .quote .by{margin-top:1rem;font-size:.85rem;font-weight:600;color:oklch(0.99 0.01 74 / .6)}
+  .quote .by span{color:oklch(0.82 0.08 70)}
+
+  .visit .edge{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .visit h2{font-size:clamp(2rem,3.9vw,3.1rem);margin:.9rem 0 1.1rem;text-wrap:balance}
+  .visit .sub{color:var(--ink-soft);font-size:1.06rem;max-width:46ch;margin-bottom:2rem}
+  .facts{display:grid;gap:0;margin-bottom:2rem}
+  .fact{display:flex;gap:1rem;align-items:baseline;padding:1rem 0;border-top:1px solid var(--line)}
+  .fact:last-child{border-bottom:1px solid var(--line)}
+  .fact .k{flex:none;width:120px;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:.15rem}
+  .fact .v{font-size:1.05rem;font-weight:500}
+  .fact .v a:hover{color:var(--accent)}
+  .fact .v small{display:block;font-weight:400;font-size:.9rem;color:var(--muted)}
+  .visit-btns{display:flex;flex-wrap:wrap;gap:.7rem}
+  .visit-btns .btn{padding:1rem 1.4rem}
+  .map{border-radius:var(--r);overflow:hidden;box-shadow:0 30px 60px -34px oklch(0.2 0.02 58 / .5);border:1px solid var(--line)}
+  .map iframe{width:100%;height:460px;border:0;display:block;filter:saturate(.95)}
+
+  .foot{background:var(--ink);color:oklch(0.99 0.01 74 / .62);padding:clamp(56px,7vw,80px) 0 34px}
+  .foot .top{display:flex;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;padding-bottom:2.4rem;border-bottom:1px solid oklch(1 0 0 / .1)}
+  .foot .wordmark b{color:oklch(0.99 0.01 74)}
+  .foot .wordmark small{color:oklch(0.99 0.01 74 / .55)}
+  .foot p{max-width:34ch;font-size:.92rem;margin-top:1rem}
+  .foot nav{display:flex;gap:3rem;flex-wrap:wrap}
+  .foot h5{color:oklch(0.99 0.01 74);font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem}
+  .foot ul{list-style:none;display:grid;gap:.6rem}
+  .foot ul a,.foot li{font-size:.92rem;color:oklch(0.99 0.01 74 / .6)}
+  .foot ul a:hover{color:oklch(0.82 0.08 70)}
+  .foot .base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.8rem;font-size:.82rem}
+  .foot .base a:hover{color:oklch(0.82 0.08 70)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:1000px){
+    .hero-in .edge{grid-template-columns:1fr}
+    .rw{max-width:440px}
+    .food .edge{grid-template-columns:1fr}
+    .plate.tall{grid-row:auto;min-height:300px}
+    .gal{grid-template-columns:repeat(2,1fr)}
+    .quotes{columns:2}
+    .visit .edge{grid-template-columns:1fr}
   }
-  @media (max-width:420px){
-    .panel h1{font-size:1.5rem}
-    .panel p{font-size:.86rem}
-    .panel-inner{padding:22px 62px 22px 22px}
-    .panel-btn{width:44px; height:44px; right:16px}
+  @media(max-width:720px){
+    .nav-mid,.nav-call{display:none}
+    .burger{display:flex}
+    .nav-sheet{position:fixed;inset:0 0 0 auto;width:80%;max-width:320px;background:var(--ink);z-index:80;transform:translateX(100%);transition:transform .4s var(--ease);display:flex;flex-direction:column;justify-content:center;gap:1.6rem;padding:2.5rem;box-shadow:-30px 0 60px -30px oklch(0.2 0.02 58 / .7)}
+    .nav-sheet.open{transform:none}
+    .nav-sheet a{color:oklch(0.99 0.01 74);font-family:var(--serif);font-size:1.4rem}
+    .lede,.food .edge{grid-template-columns:1fr}
+    .lede-media{aspect-ratio:4/3}
+    .quotes{columns:1}
   }
-  @media (prefers-reduced-motion:reduce){
-    .panel,.panel::before,.panel-btn,.panel-btn svg{transition:none}
-    .panel-inner,.panel::before,.chooser-top{animation:none}
-    .split:hover .panel{flex-grow:1;opacity:1}
-    .split:hover .panel:hover{flex-grow:1}
-  }
+  @media(min-width:721px){.nav-sheet{display:none}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 
-<div class="chooser-top">
-  <span>One Murchison kitchen, two ways to enjoy it</span>
-  <span class="dot">&bull;</span>
-  <span class="addr">State Highway 6, Murchison</span>
+<nav class="nav" id="nav">
+  <a href="index.html" class="wordmark"><b>Beechwoods Café</b><small>Murchison, NZ</small></a>
+  <div class="nav-mid">
+    <a href="#welcome">The Café</a>
+    <a href="#food">Food &amp; Coffee</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#voices">Reviews</a>
+    <a href="https://beechwoods-catering-demo.vercel.app/">Catering</a>
+  </div>
+  <div class="nav-end">
+    <a href="tel:0211095683" class="nav-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>021 109 5683</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-sheet" id="sheet">
+  <a href="#welcome">The Café</a>
+  <a href="#food">Food &amp; Coffee</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#voices">Reviews</a>
+  <a href="https://beechwoods-catering-demo.vercel.app/">Catering</a>
+  <a href="#visit">Find Us</a>
 </div>
 
-<main class="split">
-  <a class="panel panel--cafe" href="cafe.html" aria-label="Enter Beechwoods Cafe">
-    <div class="panel-inner">
-      <span class="panel-kicker">The Cafe</span>
-      <h1>Coffee, Breakfast &amp; Baking</h1>
-      <p>Our roadside cafe on State Highway 6. Proper coffee, big country breakfasts and home baking, open daily.</p>
-      <span class="panel-btn">Enter the cafe
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </span>
-      <span class="panel-phone">Call the cafe <b>021 109 5683</b></span>
+<header class="hero" id="top">
+  <div class="hero-media" data-hero>
+    <div class="frame on" style="background-image:url('img/hero-1.jpg')"></div>
+    <div class="frame" style="background-image:url('img/hero-3.jpg')"></div>
+    <div class="frame" style="background-image:url('img/hero-2.jpg')"></div>
+  </div>
+  <div class="hero-in">
+    <div class="edge">
+      <div class="reveal">
+        <span class="eyebrow">Murchison · State Highway 6</span>
+        <h1>The good stop, right on the highway.</h1>
+        <p>Barista coffee, a big country feed and a cabinet full of fresh baking, with room for the kids, the dog and every kind of vehicle. Pull in, take a breath, and leave well fed.</p>
+        <div class="hero-cta">
+          <a href="#food" class="btn btn-solid">See the food<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#visit" class="btn btn-line">Find us</a>
+        </div>
+      </div>
+      <div class="rw reveal" id="rw">
+        <div class="rw-top"><span class="rw-g">G</span><span class="rw-tag">Google review</span></div>
+        <p class="rw-quote" id="rwQuote">"Now, this café is the best place to stop. It's always busy which is a good sign, and the prices here are incredibly affordable."</p>
+        <div class="rw-name" id="rwName">Riegan Crofts, Local Guide</div>
+      </div>
     </div>
-  </a>
+  </div>
+  <span class="scroll-note">Scroll</span>
+</header>
 
-  <a class="panel panel--cater" href="catering.html" aria-label="Enter Beechwoods Catering and Weddings">
-    <div class="panel-inner">
-      <span class="panel-kicker">Catering &amp; Weddings</span>
-      <h1>Catering &amp; Wedding Feasts</h1>
-      <p>Grazing tables, event catering and wedding feasts, brought to your venue across the top of the South.</p>
-      <span class="panel-btn">Explore catering
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </span>
-      <span class="panel-phone">Enquiries <b>021 109 5683</b></span>
+<section class="ribbon">
+  <div class="edge">
+    <span class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Open 7 days, 8.30&ndash;4</span>
+    <span class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M3 8h15v5a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg>Barista coffee</span>
+    <span class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11h18"/><path d="M5 11V8a7 7 0 0 1 14 0v3"/><path d="M4 11h16v2a8 8 0 0 1-16 0z"/></svg>Fresh cabinet daily</span>
+    <span class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 17h14M6 17V9l2-4h8l2 4v8"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></svg>Big vehicle parking</span>
+    <span class="h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Playground &amp; dog-friendly</span>
+  </div>
+</section>
+
+<section class="block" id="welcome">
+  <div class="edge lede">
+    <div class="lede-media reveal"><img src="img/interior.jpg" alt="The timber and stone interior of Beechwoods Café, with a fireplace and valley view" loading="lazy"></div>
+    <div class="reveal">
+      <span class="eyebrow">Welcome in</span>
+      <h2>A warm room in the middle of the mountains.</h2>
+      <p>Set in the heart of Murchison, Beechwoods is the kind of place where the coffee is good, the food is hearty, and nobody minds a carload of kids or muddy boots. Settle in beside the fire, or spread out under the trees.</p>
+      <p>Whether you have five minutes or an hour, you will get the same thing every time: generous country food and genuine hospitality, made fresh.</p>
+      <div class="signoff">Wherever you're headed, we're worth the stop.</div>
     </div>
-  </a>
-</main>
+  </div>
+</section>
 
+<section class="block food" id="food">
+  <div class="edge">
+    <div class="food-head reveal">
+      <span class="eyebrow">Food &amp; coffee</span>
+      <h2>Made for real appetites.</h2>
+      <p>Hearty breakfasts, burgers, fish and chips, toasties and salads, next to a cabinet filled daily with savouries, sandwiches, slices, cakes and pastries. Pair it with expertly made coffee, a smoothie or a thick shake.</p>
+    </div>
+    <div class="plate tall reveal">
+      <img src="img/coffee.jpg" alt="A flat white on a timber table at Beechwoods Café" loading="lazy">
+      <div class="cap"><b>Proper coffee</b><span>Ground and poured by hand, all day</span></div>
+    </div>
+    <div class="plate reveal">
+      <img src="img/cabinet.jpg" alt="The pie and savoury cabinet, freshly filled" loading="lazy">
+      <div class="cap"><b>The cabinet</b><span>Pies, savouries and home baking</span></div>
+    </div>
+    <div class="plate reveal">
+      <img src="img/counter.jpg" alt="The counter and dining room inside Beechwoods Café" loading="lazy">
+      <div class="cap"><b>Order at the counter</b><span>Dine in or grab and go</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="gallery">
+  <div class="edge">
+    <div class="gal-head reveal">
+      <div><span class="eyebrow">A look around</span><h2>Room to stop, inside and out.</h2></div>
+      <a href="#visit" class="btn btn-quiet">Plan a visit<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="gal reveal">
+      <figure class="w2 h2"><img src="img/hero-3.jpg" alt="Dining room with a stone fireplace and a large valley-view window" loading="lazy"></figure>
+      <figure><img src="img/deck.jpg" alt="The covered deck with picnic tables" loading="lazy"></figure>
+      <figure><img src="img/playground.jpg" alt="The children's playground" loading="lazy"></figure>
+      <figure class="w2"><img src="img/outdoor-1.jpg" alt="Outdoor picnic seating under umbrellas in the sun" loading="lazy"></figure>
+      <figure><img src="img/exterior.jpg" alt="The timber building and garden" loading="lazy"></figure>
+      <figure><img src="img/outdoor-2.jpg" alt="Timber tables beside the red chimney, framed by trees" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block voices" id="voices">
+  <div class="edge">
+    <span class="eyebrow">What people say</span>
+    <h2>Locals and travellers keep pulling in.</h2>
+    <div class="quotes reveal">
+      <div class="quote"><p>"Always stop here for lunch on our way to Nelson. We both enjoyed it all and appreciated the attentive, helpful service. Will definitely be back."</p><div class="by">Orewa Murphys <span>· Local Guide</span></div></div>
+      <div class="quote"><p>"Stopped for a coffee on our way to Buller Gorge. Great little pit stop with good coffee and loads of lunch options. Cakes and sandwiches looked delicious."</p><div class="by">Grace T <span>· Local Guide</span></div></div>
+      <div class="quote"><p>"The pies here are excellent, especially the peppery beef one. We came on a weekday and it was really quiet. Friendly service and pies to die for."</p><div class="by">Cristian Garcia <span>· Local Guide</span></div></div>
+      <div class="quote"><p>"Hands down the best sausage rolls we've ever had. We stop here every trip for coffee and sausage rolls. Too good to wait for a photo."</p><div class="by">shireen Buchler <span>· Local Guide</span></div></div>
+      <div class="quote"><p>"Great place to stop for lunch. Gorgeous, well filled sandwiches, and a good selection of gluten free for my coeliac hubby. Well done."</p><div class="by">Ruth Gerrard <span>· Local Guide</span></div></div>
+      <div class="quote"><p>"Visited for coffee, then came back a week later with a group of 29. Excellent, tasty and plentiful, with staff full of local knowledge."</p><div class="by">Frank Aarts <span>· Google review</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block visit" id="visit">
+  <div class="edge">
+    <div class="reveal">
+      <span class="eyebrow">Find us</span>
+      <h2>Right on the highway through Murchison.</h2>
+      <p class="sub">Easy to spot, easy to pull into, with parking for cars, caravans, campervans, buses and trucks. Tap below to call, email or get directions.</p>
+      <div class="facts">
+        <div class="fact"><div class="k">Where</div><div class="v">State Highway 6, Murchison<small>Nelson · Tasman · Buller</small></div></div>
+        <div class="fact"><div class="k">Open</div><div class="v">7 days, 8.30am to 4.00pm</div></div>
+        <div class="fact"><div class="k">Phone</div><div class="v"><a href="tel:0211095683">021 109 5683</a></div></div>
+        <div class="fact"><div class="k">Email</div><div class="v"><a href="#" data-gmail data-user="hello" data-domain="beechwoodscafe.co.nz" data-su="Enquiry%20from%20the%20website">hello@beechwoodscafe.co.nz</a></div></div>
+      </div>
+      <div class="visit-btns">
+        <a href="tel:0211095683" class="btn btn-solid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call the café</a>
+        <a href="#" data-gmail data-user="hello" data-domain="beechwoodscafe.co.nz" data-su="Enquiry%20from%20the%20website" class="btn btn-ink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email us</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Beechwoods+Cafe+Murchison" target="_blank" rel="noopener" class="btn btn-quiet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Get directions</a>
+      </div>
+    </div>
+    <div class="map reveal">
+      <iframe title="Map of Beechwoods Café, Murchison" src="https://www.google.com/maps?q=Beechwoods%20Cafe%20Murchison&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="edge">
+    <div class="top">
+      <div>
+        <span class="wordmark"><b>Beechwoods Café</b><small>Murchison, NZ</small></span>
+        <p>The good stop on State Highway 6. Coffee, food and a warm room, open 7 days.</p>
+      </div>
+      <nav>
+        <div>
+          <h5>Visit</h5>
+          <ul>
+            <li>State Highway 6, Murchison</li>
+            <li>Open 7 days, 8.30&ndash;4</li>
+            <li><a href="tel:0211095683">021 109 5683</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>More</h5>
+          <ul>
+            <li><a href="#food">Food &amp; Coffee</a></li>
+            <li><a href="#voices">Reviews</a></li>
+            <li><a href="https://beechwoods-catering-demo.vercel.app/">Catering &amp; Events</a></li>
+            <li><a href="#" data-gmail data-user="hello" data-domain="beechwoodscafe.co.nz" data-su="Enquiry">Email us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="base">
+      <span>© <span id="yr"></span> Beechwoods Café, Murchison</span>
+      <span><a href="terms.html">Terms</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nav=document.getElementById('nav');
+  var onScroll=function(){nav.classList.toggle('scrolled',scrollY>32)};
+  onScroll();addEventListener('scroll',onScroll,{passive:true});
+  var b=document.getElementById('burger'),sheet=document.getElementById('sheet');
+  b.addEventListener('click',function(){sheet.classList.toggle('open')});
+  sheet.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){sheet.classList.remove('open')})});
+  var frames=document.querySelectorAll('[data-hero] .frame');
+  if(frames.length>1&&!reduce){var i=0;setInterval(function(){frames[i].classList.remove('on');i=(i+1)%frames.length;frames[i].classList.add('on')},6500)}
+  var rq=document.getElementById('rwQuote'),rn=document.getElementById('rwName'),rw=document.getElementById('rw');
+  var R=[
+    {q:'"Now, this café is the best place to stop. It\'s always busy which is a good sign, and the prices here are incredibly affordable."',n:'Riegan Crofts, Local Guide'},
+    {q:'"Always stop here for lunch on our way to Nelson. We appreciated the attentive, helpful service. Will definitely be back."',n:'Orewa Murphys, Local Guide'},
+    {q:'"Great little pit stop with good coffee and loads of lunch options. Cakes and sandwiches looked delicious."',n:'Grace T, Local Guide'},
+    {q:'"The pies here are excellent, especially the peppery beef one. Friendly service and pies to die for."',n:'Cristian Garcia, Local Guide'},
+    {q:'"Good café, pleased to find it as it\'s the only one open past 3.30 in Murchison. Happily served us without fuss."',n:'Lisa Schißr, Local Guide'}
+  ];
+  if(rq&&rn&&!reduce){var k=0;setInterval(function(){k=(k+1)%R.length;rw.classList.add('fade');setTimeout(function(){rq.textContent=R[k].q;rn.textContent=R[k].n;rw.classList.remove('fade')},450)},5200)}
+  if(reduce||!('IntersectionObserver'in window)){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')})}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)})}
+  document.querySelectorAll('a[data-gmail]').forEach(function(a){var to=a.getAttribute('data-user')+'@'+a.getAttribute('data-domain');a.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(to)+'&su='+(a.getAttribute('data-su')||'');a.target='_blank';a.rel='noopener'});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
