@@ -152,3 +152,29 @@ img.treated{filter:saturate(.92) contrast(1.04);border-radius:var(--radius)}
   .reveal{opacity:1;transform:none;transition:none}
   *{animation-duration:.001s!important}
 }
+
+/* ---------- Business switcher (nav) ---------- */
+.nav-switch{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-weight:700;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;
+  padding:9px 16px;border-radius:999px;
+  border:1.5px solid rgba(255,255,255,.42);color:#fff!important;
+  transition:background .25s ease,border-color .25s ease,color .25s ease,transform .25s ease;
+}
+.nav-switch svg{width:16px;height:16px;flex:none}
+.nav-switch:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-1px)}
+.nav.scrolled .nav-switch{border-color:var(--line);color:var(--ink)!important}
+.nav.scrolled .nav-switch:hover{border-color:var(--accent);color:var(--accent-deep)!important;background:transparent}
+
+/* ---------- Contact CTA (call + email buttons, no form) ---------- */
+.contact-cta{background:var(--paper);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow);color:var(--ink);display:flex;flex-direction:column;gap:14px}
+.contact-cta h3{color:var(--ink);font-size:1.4rem;margin-bottom:2px}
+.contact-cta > p{color:var(--ink-soft);font-size:.95rem;margin-bottom:6px}
+.contact-cta .btn{width:100%;justify-content:center}
+.contact-cta .cta-note{font-size:.86rem;color:var(--ink-soft);margin-top:8px;margin-bottom:0}
+.contact-cta .cta-note a{color:var(--accent-deep);font-weight:700}
+
+/* ---------- Contact map ---------- */
+.contact-map{margin-top:44px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.12)}
+.contact-map iframe{display:block;width:100%;height:380px;border:0;filter:saturate(.92)}
+@media(max-width:600px){.contact-map iframe{height:300px}}
