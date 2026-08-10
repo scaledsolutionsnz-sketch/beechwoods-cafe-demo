@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Menu | Beechwoods Café, Murchison</title>
+<meta name="description" content="The full Beechwoods Café menu: all-day breakfasts, burgers, cabinet food, coffee and cold drinks. Open 7 days on State Highway 6, Murchison." />
+<meta name="theme-color" content="#2a211a" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232a211a'/%3E%3Ctext x='50' y='70' font-size='60' font-family='Georgia,serif' fill='%23c8623b' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:oklch(0.968 0.013 74);--bg-sink:oklch(0.945 0.016 72);--surface:oklch(0.995 0.006 74);
+    --ink:oklch(0.255 0.022 58);--ink-soft:oklch(0.415 0.021 56);--muted:oklch(0.55 0.018 58);
+    --line:oklch(0.885 0.014 72);--line-soft:oklch(0.92 0.012 72);
+    --accent:oklch(0.575 0.145 42);--accent-deep:oklch(0.5 0.14 40);--leaf:oklch(0.52 0.08 145);--night:oklch(0.24 0.02 58);
+    --r:20px;--r-sm:13px;--ease:cubic-bezier(.22,.61,.36,1);
+    --sans:'Inter',system-ui,-apple-system,sans-serif;--serif:'Fraunces',Georgia,serif;--edge:min(1240px,92vw);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.04;letter-spacing:-.01em;font-optical-sizing:auto}
+  ::selection{background:oklch(0.575 0.145 42 / .22)}
+  .edge{width:var(--edge);margin-inline:auto}
+  .eyebrow{font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.92rem 1.5rem;border-radius:100px;border:1px solid transparent;cursor:pointer;transition:transform .3s var(--ease),background .3s,color .3s,border-color .3s}
+  .btn svg{width:17px;height:17px}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-solid{background:var(--accent);color:oklch(0.99 0.01 74)}
+  .btn-solid:hover{background:var(--accent-deep)}
+  .btn-line{background:transparent;border-color:oklch(1 0 0 / .5);color:oklch(0.99 0.01 74)}
+  .btn-line:hover{background:oklch(1 0 0 / .1);border-color:oklch(1 0 0 / .8)}
+
+  .nav{position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:1.15rem clamp(18px,4vw,40px);transition:background .4s var(--ease),padding .4s var(--ease),box-shadow .4s,border-color .4s;border-bottom:1px solid transparent}
+  .nav.scrolled{background:oklch(0.968 0.013 74 / .86);backdrop-filter:blur(14px);padding:.7rem clamp(18px,4vw,40px);border-color:var(--line-soft)}
+  .wordmark{display:flex;align-items:center;color:oklch(0.99 0.01 74)}
+  .brand-logo{height:54px;width:auto;display:block;filter:brightness(0) invert(1);transition:filter .4s var(--ease),height .4s var(--ease)}
+  .nav.scrolled .brand-logo{filter:none;height:46px}
+  .nav-mid{display:flex;gap:2.1rem}
+  .nav-mid a{font-weight:500;font-size:.92rem;color:oklch(0.99 0.01 74 / .88);transition:color .3s}
+  .nav.scrolled .nav-mid a{color:var(--ink-soft)}
+  .nav-mid a:hover,.nav-mid a.on{color:oklch(0.86 0.06 70)}
+  .nav.scrolled .nav-mid a:hover,.nav.scrolled .nav-mid a.on{color:var(--accent)}
+  .nav-end{display:flex;align-items:center;gap:1rem}
+  .switch{display:inline-flex;align-items:center;gap:2px;padding:3px;border-radius:100px;border:1px solid oklch(1 0 0 / .28);background:oklch(1 0 0 / .08);transition:border-color .4s,background .4s}
+  .nav.scrolled .switch{border-color:var(--line);background:var(--surface)}
+  .switch a{font-family:var(--sans);font-weight:600;font-size:.82rem;padding:.4rem .9rem;border-radius:100px;color:oklch(0.99 0.01 74 / .8);transition:color .25s,background .25s}
+  .nav.scrolled .switch a{color:var(--ink-soft)}
+  .switch a.on{background:var(--accent);color:oklch(0.99 0.01 74)}
+  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+  .burger span{width:24px;height:2px;border-radius:2px;background:oklch(0.99 0.01 74);transition:.3s}
+  .nav.scrolled .burger span{background:var(--ink)}
+  .nav-sheet{position:fixed;inset:0 0 0 auto;width:80%;max-width:320px;background:var(--ink);z-index:80;transform:translateX(100%);transition:transform .4s var(--ease);display:none;flex-direction:column;justify-content:center;gap:1.6rem;padding:2.5rem;box-shadow:-30px 0 60px -30px oklch(0.2 0.02 58 / .7)}
+  .nav-sheet a{color:oklch(0.99 0.01 74);font-family:var(--serif);font-size:1.4rem}
+
+  .mhero{position:relative;background:var(--night);color:var(--bg);padding:150px 0 clamp(46px,7vw,74px);overflow:hidden}
+  .mhero::before{content:"";position:absolute;inset:0;background:url('img/loc-stop.webp') center/cover;opacity:.14}
+  .mhero .edge{position:relative}
+  .mhero h1{color:oklch(0.99 0.01 74);font-size:clamp(2.6rem,6vw,4.4rem);margin:.7rem 0 .9rem}
+  .mhero p{color:oklch(0.99 0.01 74 / .84);max-width:56ch;font-size:1.08rem}
+  .legend{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.7rem}
+  .legend span{font-size:.74rem;font-weight:600;letter-spacing:.03em;background:oklch(1 0 0 / .08);border:1px solid oklch(1 0 0 / .16);color:oklch(0.99 0.01 74 / .86);padding:.34rem .72rem;border-radius:100px}
+
+  .menu-wrap{padding-block:clamp(56px,8vw,104px)}
+  .menu-cols{columns:2;column-gap:clamp(2rem,5vw,4.6rem)}
+  .cat{break-inside:avoid;margin-bottom:2.9rem}
+  .cat h3{font-size:1.65rem;color:var(--ink);padding-bottom:.55rem;margin-bottom:1.15rem;border-bottom:2px solid var(--accent);display:inline-block}
+  .cat .cnote{display:block;font-size:.82rem;color:var(--muted);margin:-.55rem 0 1.15rem;max-width:40ch}
+  .m-item{margin-bottom:1.05rem}
+  .m-row{display:flex;align-items:baseline;gap:.55rem}
+  .m-name{font-weight:600;font-size:1.02rem;color:var(--ink)}
+  .m-dots{flex:1;border-bottom:1px dotted oklch(0.72 0.02 70);transform:translateY(-4px);min-width:14px}
+  .m-price{font-family:var(--serif);font-weight:600;color:var(--accent);font-size:1.02rem;white-space:nowrap}
+  .m-desc{font-size:.9rem;color:var(--ink-soft);margin-top:.16rem;max-width:48ch}
+  .m-desc .plus{color:var(--muted)}
+  .tag{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.05em;color:var(--leaf);border:1px solid var(--line);border-radius:6px;padding:.03rem .34rem;margin-left:.3rem;vertical-align:middle;text-transform:uppercase}
+  .menu-note{margin-top:.4rem;padding:1.5rem 1.7rem;background:var(--bg-sink);border:1px solid var(--line);border-radius:var(--r);color:var(--ink-soft);font-size:.96rem}
+  .menu-note b{color:var(--ink);font-weight:600}
+  .menu-cta{margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:.8rem}
+
+  .foot{background:var(--ink);color:oklch(0.99 0.01 74 / .62);padding:clamp(56px,7vw,80px) 0 34px}
+  .foot .top{display:flex;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;padding-bottom:2.4rem;border-bottom:1px solid oklch(1 0 0 / .1)}
+  .foot-logo{height:66px;width:auto;margin-bottom:.6rem}
+  .foot p{max-width:34ch;font-size:.92rem;margin-top:1rem}
+  .foot nav{display:flex;gap:3rem;flex-wrap:wrap}
+  .foot h5{color:oklch(0.99 0.01 74);font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem}
+  .foot ul{list-style:none;display:grid;gap:.6rem}
+  .foot ul a,.foot li{font-size:.92rem;color:oklch(0.99 0.01 74 / .6)}
+  .foot ul a:hover{color:oklch(0.82 0.08 70)}
+  .foot .base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.8rem;font-size:.82rem}
+  .foot .base a:hover{color:oklch(0.82 0.08 70)}
+
+  @media(max-width:820px){.menu-cols{columns:1}}
+  @media(max-width:720px){
+    .nav-mid{display:none}
+    .switch a{padding:.34rem .72rem;font-size:.78rem}
+    .burger{display:flex}
+    .nav-sheet.open{transform:none;display:flex}
+  }
+  @media(min-width:721px){.nav-sheet{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="wordmark"><img class="brand-logo" src="img/cafe-logo.webp" alt="Beechwoods Café, Murchison NZ"></a>
+  <div class="nav-mid">
+    <a href="index.html#welcome">The Café</a>
+    <a href="menu.html" class="on">Menu</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="index.html#voices">Reviews</a>
+    <a href="index.html#visit">Find Us</a>
+  </div>
+  <div class="nav-end">
+    <div class="switch"><a class="on">Café</a><a href="https://beechwoods-catering-demo.vercel.app/">Catering</a></div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav-sheet" id="sheet">
+  <a href="index.html#welcome">The Café</a>
+  <a href="menu.html">Menu</a>
+  <a href="index.html#gallery">Gallery</a>
+  <a href="index.html#voices">Reviews</a>
+  <a href="https://beechwoods-catering-demo.vercel.app/">Catering</a>
+  <a href="index.html#visit">Find Us</a>
+</div>
+
+<header class="mhero">
+  <div class="edge">
+    <span class="eyebrow" style="color:oklch(0.86 0.06 70)">Beechwoods Café · Murchison</span>
+    <h1>The full menu.</h1>
+    <p>Fresh, generous food made for real appetites, served all day. Cooked to order and filled fresh from the cabinet, seven days a week.</p>
+    <div class="legend">
+      <span>GF — gluten-free option</span>
+      <span>V — vegetarian</span>
+      <span>DF — dairy-free</span>
+      <span>* option or extra applies</span>
+      <span>Prices in NZD</span>
+    </div>
+  </div>
+</header>
+
+<main class="menu-wrap">
+  <div class="edge menu-cols">
+
+    <section class="cat">
+      <h3>All-Day Menu</h3>
+      <div class="m-item"><div class="m-row"><span class="m-name">All-Day Mega Breakfast <span class="tag">GF*</span></span><span class="m-dots"></span><span class="m-price">$29</span></div><div class="m-desc">Hearty and filling, with all the classics: bacon, eggs, sausages, onion, hash browns and mushrooms on ciabatta toast.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Veggie Mega Breakfast <span class="tag">V</span><span class="tag">GF*</span></span><span class="m-dots"></span><span class="m-price">$25</span></div><div class="m-desc">Steamed greens, eggs, hash browns, mushrooms, tomato and onion on ciabatta toast.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Eggs How You Want Them <span class="tag">V</span><span class="tag">GF*</span></span><span class="m-dots"></span><span class="m-price">$14</span></div><div class="m-desc">Poached, fried or scrambled on ciabatta toast. <span class="plus">With bacon $19.</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Eggs Benedict</span><span class="m-dots"></span><span class="m-price">$19</span></div><div class="m-desc">Eggs on a toasted muffin with hollandaise. <span class="plus">GF +$1 · with bacon $24.</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Omelette <span class="tag">GF*</span></span><span class="m-dots"></span><span class="m-price">$22</span></div><div class="m-desc">Very popular. With toast and a choice of three fillings: cheese, mushroom, tomato, ham, onion, bacon, relish or sweet chilli.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Bacon Buttie <span class="tag">GF*</span></span><span class="m-dots"></span><span class="m-price">$17</span></div><div class="m-desc">Fresh white bread with butter melted in by a generous bunch of grilled streaky bacon and tomato relish. A classic.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Fish Buttie</span><span class="m-dots"></span><span class="m-price">$19</span></div><div class="m-desc">Fresh white bread and butter with deep-fried fish, sweet chilli and aioli.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">West Coast Whitebait Buttie <span class="tag">GF*</span></span><span class="m-dots"></span><span class="m-price">$23</span></div><div class="m-desc">Fresh white bread, butter, a generous South Island whitebait fritter and a slice of lemon. When in season, nuff said.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Hearty Soup &amp; Toast <span class="tag">V</span><span class="tag">GF*</span></span><span class="m-dots"></span><span class="m-price">$16</span></div><div class="m-desc">Mild Thai-style pumpkin or chunky veggie, with ciabatta bread or toast.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Fish &amp; Chips</span><span class="m-dots"></span><span class="m-price">$25</span></div><div class="m-desc">Two pieces of panko-crumbed Dory with chips, salad and sauces. <span class="plus">Other fish may vary in price.</span></div></div>
+    </section>
+
+    <section class="cat">
+      <h3>All-Day Burgers</h3>
+      <span class="cnote">All burgers come with fries in a brioche bun.</span>
+      <div class="m-item"><div class="m-row"><span class="m-name">Beechwoods Burger</span><span class="m-dots"></span><span class="m-price">$24</span></div><div class="m-desc">Beef pattie, bacon, cheese, lettuce, tomato, egg, onion, pineapple, relish and aioli.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Chicken Burger</span><span class="m-dots"></span><span class="m-price">$23</span></div><div class="m-desc">Crumbed chicken schnitzel, bacon, cheese, lettuce, pineapple, tomato, relish and aioli. World famous in Murch.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Fish Burger</span><span class="m-dots"></span><span class="m-price">$23</span></div><div class="m-desc">Deep-fried crumbed Dory, lettuce, tomato, cheese, tartare and aioli.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Cheese Burger</span><span class="m-dots"></span><span class="m-price">$22</span></div><div class="m-desc">Beef pattie, cheese, lettuce, tomato, onion, relish and aioli.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">B.E.L.T Bagel</span><span class="m-dots"></span><span class="m-price">$19</span></div><div class="m-desc">Bacon, egg, lettuce and tomato in a toasted bagel.</div></div>
+    </section>
+
+    <section class="cat">
+      <h3>Light Meals &amp; Sides</h3>
+      <div class="m-item"><div class="m-row"><span class="m-name">Toasted Sandwiches <span class="tag">GF*</span></span><span class="m-dots"></span><span class="m-price">$12</span></div><div class="m-desc">White, wholemeal or gluten-free bread with three fillings: bacon, ham, cheese, pineapple, tomato, mushrooms or onion. <span class="plus">GF bread +$1 · extra fillings $1 ea · extra bacon $5 · relish or sauces 60c.</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Crumbed Fish</span><span class="m-dots"></span><span class="m-price">$10</span></div><div class="m-desc">Single panko-crumbed Dory fillet, 100–140g.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Green Salad <span class="tag">GF</span><span class="tag">V</span></span><span class="m-dots"></span><span class="m-price">$8 / $12</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Chicken Nuggets (4) &amp; Fries</span><span class="m-dots"></span><span class="m-price">$12</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Fish Bites (3) &amp; Fries</span><span class="m-dots"></span><span class="m-price">$12</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Toast &amp; Jam <span class="tag">GF*</span></span><span class="m-dots"></span><span class="m-price">$9</span></div><div class="m-desc">Toasted white, multigrain or gluten-free bread with butter and jam, honey or Marmite.</div></div>
+    </section>
+
+    <section class="cat">
+      <h3>Stone-Base Pizza</h3>
+      <span class="cnote">Available from 10:00am.</span>
+      <div class="m-item"><div class="m-row"><span class="m-name">Hawaiian</span><span class="m-dots"></span><span class="m-price">$28</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Pear &amp; Chèvre</span><span class="m-dots"></span><span class="m-price">$29</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Italiano</span><span class="m-dots"></span><span class="m-price">$29</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Margherita</span><span class="m-dots"></span><span class="m-price">$27</span></div></div>
+    </section>
+
+    <section class="cat">
+      <h3>Cabinet Food</h3>
+      <div class="m-item"><div class="m-row"><span class="m-name">Sandwiches</span><span class="m-dots"></span><span class="m-price">$8</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Filled Croissant</span><span class="m-dots"></span><span class="m-price">$10</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Pies</span><span class="m-dots"></span><span class="m-price">$8</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Sausage Rolls</span><span class="m-dots"></span><span class="m-price">$7.50 / $8</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Savouries</span><span class="m-dots"></span><span class="m-price">$3.50</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Keto Savouries <span class="tag">GF</span></span><span class="m-dots"></span><span class="m-price">$6</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Frittata <span class="tag">GF</span><span class="tag">V</span></span><span class="m-dots"></span><span class="m-price">$11</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Deep-Dish Pie <span class="tag">GF</span><span class="tag">V</span></span><span class="m-dots"></span><span class="m-price">$12</span></div><div class="m-desc">Ham, cheddar and egg.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Capsicum &amp; Spinach Quiche</span><span class="m-dots"></span><span class="m-price">$11</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Muffins, Scones, Slices, Pastries</span><span class="m-dots"></span><span class="m-price">$6</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Slices <span class="tag">GF</span><span class="tag">DF/V</span></span><span class="m-dots"></span><span class="m-price">$8</span></div><div class="m-desc">Gluten-free, dairy-free and refined-sugar-free.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Cakes</span><span class="m-dots"></span><span class="m-price">$8</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Fresh Fruit</span><span class="m-dots"></span><span class="m-price">$2 ea</span></div></div>
+    </section>
+
+    <section class="cat">
+      <h3>Sides</h3>
+      <span class="cnote">Small / large where two prices are shown.</span>
+      <div class="m-item"><div class="m-row"><span class="m-name">Hot Chips (fries)</span><span class="m-dots"></span><span class="m-price">$5 / $10</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Kumara Chips</span><span class="m-dots"></span><span class="m-price">$7 / $14</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Seasoned Wedges</span><span class="m-dots"></span><span class="m-price">$7 / $14</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Loaded Wedges</span><span class="m-dots"></span><span class="m-price">$13 / $20</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Hotdog (Corn-Dog)</span><span class="m-dots"></span><span class="m-price">$5</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Hash Brown</span><span class="m-dots"></span><span class="m-price">$2.50</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Chicken Nuggets</span><span class="m-dots"></span><span class="m-price">$2 ea</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Fish Bites</span><span class="m-dots"></span><span class="m-price">$2 ea</span></div></div>
+    </section>
+
+    <section class="cat">
+      <h3>Hot Drinks</h3>
+      <span class="cnote">Two prices are cup / mug. Dairy alternatives (almond, soy, oat, coconut) +80c. Extras +50c: take-away cup, thick-shake base, extra or flavour shot, cream, decaf. Bring your own cup and save 30c.</span>
+      <div class="m-item"><div class="m-row"><span class="m-name">Tea (from)</span><span class="m-dots"></span><span class="m-price">$4</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Flat White, Latte, Chocolate</span><span class="m-dots"></span><span class="m-price">$5.80 / $6.30</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Cappuccino, Mochaccino</span><span class="m-dots"></span><span class="m-price">$5.80 / $6.30</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Espresso <span class="tag">S/L</span></span><span class="m-dots"></span><span class="m-price">$4.80</span></div><div class="m-desc">Short, long or Americano.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Chai Latte or Chai Spice</span><span class="m-dots"></span><span class="m-price">$5.80 / $6.30</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Macchiato</span><span class="m-dots"></span><span class="m-price">$5</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Piccolo, Vienna</span><span class="m-dots"></span><span class="m-price">$5.20</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Hot Blackcurrant or Lemon &amp; Honey</span><span class="m-dots"></span><span class="m-price">$4.80 / $5.30</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Fluffy</span><span class="m-dots"></span><span class="m-price">$3</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Instant Coffee</span><span class="m-dots"></span><span class="m-price">$3.50</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Matcha (from)</span><span class="m-dots"></span><span class="m-price">$7</span></div></div>
+    </section>
+
+    <section class="cat">
+      <h3>Cold Drinks &amp; Ice-Cream</h3>
+      <div class="m-item"><div class="m-row"><span class="m-name">Real Fruit Ice-Cream</span><span class="m-dots"></span><span class="m-price">$7</span></div><div class="m-desc">Mixed berry, boysenberry, banana, espresso coffee or matcha.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Milkshake (550ml)</span><span class="m-dots"></span><span class="m-price">$8</span></div><div class="m-desc">Banana, chocolate, caramel, strawberry, raspberry, vanilla, spearmint or lime.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Banana &amp; Maple Smoothie (550ml)</span><span class="m-dots"></span><span class="m-price">$9</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Berry Smoothie (550ml)</span><span class="m-dots"></span><span class="m-price">$9</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Iced Coffee or Mocha (550ml)</span><span class="m-dots"></span><span class="m-price">$9</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Matcha Drinks (from)</span><span class="m-dots"></span><span class="m-price">$7</span></div></div>
+    </section>
+
+    <section class="cat">
+      <h3>Beer, Wine &amp; Cider</h3>
+      <div class="m-item"><div class="m-row"><span class="m-name">Beer</span><span class="m-dots"></span><span class="m-price">$9.50</span></div><div class="m-desc">Speight's Gold Medal, Mid and Old Dark, Steinlager, Mac's Gold, Heineken, Tui.</div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Light or Low-Alcohol Beer</span><span class="m-dots"></span><span class="m-price">$8</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Woodstock RTD</span><span class="m-dots"></span><span class="m-price">$11</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">Apple or Berry Cider</span><span class="m-dots"></span><span class="m-price">$9.50</span></div></div>
+      <div class="m-item"><div class="m-row"><span class="m-name">House Wine</span><span class="m-dots"></span><span class="m-price">$11</span></div><div class="m-desc">Merlot, Pinot Noir, Chardonnay, Pinot Gris, Rosé, Sauvignon Blanc or Sparkling White (Brut).</div></div>
+      <span class="cnote" style="margin-top:.6rem">Check our fridge for seasonal extras and specials.</span>
+    </section>
+
+    <div class="cat menu-note">
+      <b>Catering, conferences &amp; events.</b> We also cater on and off site, open for evening dining by arrangement for groups of 20 or more (you choose your own menu), run an in-house conference room (hire from $30 a day), and host functions and events. <a href="https://beechwoods-catering-demo.vercel.app/" style="color:var(--accent);font-weight:600">See Beechwoods Catering →</a>
+    </div>
+
+  </div>
+
+  <div class="edge menu-cta">
+    <a href="tel:+6435239571" class="btn btn-solid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call the café</a>
+    <a href="index.html#visit" class="btn btn-line" style="border-color:var(--line);color:var(--ink)">Find us on the map</a>
+    <a href="review.html" class="btn btn-line" style="border-color:var(--line);color:var(--ink)">Rate your visit</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="edge">
+    <div class="top">
+      <div>
+        <img class="foot-logo" src="img/cafe-logo.webp" alt="Beechwoods Café, Murchison NZ">
+        <p>The good stop on State Highway 6. Coffee, food and a warm room, open 7 days.</p>
+      </div>
+      <nav>
+        <div>
+          <h5>Visit</h5>
+          <ul>
+            <li>State Highway 6, Murchison</li>
+            <li>Summer hours: 8am&ndash;5pm daily</li>
+            <li><a href="tel:+6435239571">03 523 9571</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>More</h5>
+          <ul>
+            <li><a href="index.html#welcome">The Café</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#voices">Reviews</a></li>
+            <li><a href="https://beechwoods-catering-demo.vercel.app/">Catering &amp; Events</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="base">
+      <span>© <span id="yr"></span> Beechwoods Café, Murchison</span>
+      <span><a href="terms.html">Terms</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var onScroll=function(){nav.classList.toggle('scrolled',scrollY>32)};
+  onScroll();addEventListener('scroll',onScroll,{passive:true});
+  var b=document.getElementById('burger'),sheet=document.getElementById('sheet');
+  b.addEventListener('click',function(){sheet.classList.toggle('open')});
+  sheet.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){sheet.classList.remove('open')})});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
