@@ -151,12 +151,13 @@
       <div id="formStep">
         <h2>Send us a private message</h2>
         <p class="lead">Your feedback goes directly to the team at Beechwoods.</p>
-        <form action="https://api.staticforms.xyz/submit" method="post" id="fbForm">
-          <input type="hidden" name="apiKey" value="sf_768da8d33927e7f4f241d0a6" />
-          <input type="hidden" name="subject" value="Private feedback - Beechwoods Cafe website" />
-          <input type="hidden" name="$rating" id="ratingField" value="" />
-          <input type="hidden" name="redirectTo" value="https://beechwoods-cafe-demo.vercel.app/private.html?sent=1" />
-          <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off" />
+        <form action="https://formsubmit.co/info@beechwoodscafe.co.nz" method="post" id="fbForm">
+          <input type="hidden" name="_subject" value="Private feedback - Beechwoods Cafe website" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="rating" id="ratingField" value="" />
+          <input type="hidden" name="_next" value="https://beechwoods-cafe-demo.vercel.app/private.html?sent=1" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="field"><label for="fbName">Your name</label><input id="fbName" type="text" name="name" required /></div>
           <div class="field"><label for="fbEmail">Email</label><input id="fbEmail" type="email" name="email" required /></div>
           <div class="field"><label for="fbMsg">What happened?</label><textarea id="fbMsg" name="message" required></textarea></div>
